@@ -6,8 +6,27 @@ import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
 import logo from '../logo.svg'
+import { useEffect } from 'react';
+import axios from 'axios';
 
 function WelcomePage() {
+
+
+  useEffect(() => {
+    console.log("Hello...!");
+    axios.post('http://localhost:9000/employeList', {
+      firstName: 'Fred',
+      lastName: 'Flintstone'
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+  }, []);
+
   return (
     <Container className='mt-1'>
       <Navbar expand="lg" variant="light" bg="light">
