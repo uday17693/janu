@@ -6,32 +6,15 @@ import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
 import logo from '../logo.svg'
-import { useEffect } from 'react';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function WelcomePage() {
 
-
-  useEffect(() => {
-    console.log("Hello...!");
-    axios.post('http://localhost:9000/employeList', {
-      firstName: 'Fred',
-      lastName: 'Flintstone'
-    })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-  }, []);
-
   return (
     <Container className='mt-1'>
-      <Navbar expand="lg" variant="light" bg="light">
+      <Navbar expand="lg" variant="light" style={{ backgroundColor: '#e9ecef' }}>
         <Container className='p-3'>
-          <Navbar.Brand href="#">Global Examination Center</Navbar.Brand>
+          <Navbar.Brand href="/welcome">Global Examination Center</Navbar.Brand>
         </Container>
       </Navbar>
       <p className='mt-5 p-2'>
@@ -48,7 +31,9 @@ function WelcomePage() {
                   Some quick example text to build on the card title and make up the
                   bulk of the card's content.
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="primary">
+                  <Link to="/createExam" style={{ color: 'white', textDecoration: 'none' }}>Create Exam</Link>
+                </Button>
               </Card.Body>
             </Card>
           </Col>
@@ -61,7 +46,9 @@ function WelcomePage() {
                   Some quick example text to build on the card title and make up the
                   bulk of the card's content.
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="primary">
+                  <Link to="/examList" style={{ color: 'white', textDecoration: 'none' }}>Give Exam</Link>
+                </Button>
               </Card.Body>
             </Card>
           </Col>
@@ -74,7 +61,9 @@ function WelcomePage() {
                   Some quick example text to build on the card title and make up the
                   bulk of the card's content.
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="primary">
+                  <Link to="/examList" style={{ color: 'white', textDecoration: 'none' }}>Report</Link>
+                </Button>
               </Card.Body>
             </Card>
           </Col>

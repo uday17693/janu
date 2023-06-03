@@ -1,7 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -20,9 +19,9 @@ function CreateExam() {
   const [solution, setSolution] = useState("");
   return (
     <Container className='mt-1'>
-      <Navbar expand="lg" variant="light" bg="light">
+      <Navbar expand="lg" variant="light" style={{ backgroundColor: '#e9ecef' }}>
         <Container className='p-3'>
-          <Navbar.Brand href="#">Global Examination Center</Navbar.Brand>
+          <Navbar.Brand href="/welcome">Global Examination Center</Navbar.Brand>
         </Container>
       </Navbar>
       <Container className='mt-3'>
